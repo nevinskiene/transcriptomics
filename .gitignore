@@ -1,0 +1,7 @@
+*.fastq.gz
+*.log
+*.json
+*.html
+*.txt
+*.zip
+.snakemake
