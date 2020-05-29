@@ -5,3 +5,12 @@
 *.txt
 *.zip
 .snakemake
+*.bam
+*.summary
+*.out
+*.tab
+*.bai
+*.fa
+*.gtf
+*.bed
+outputs
