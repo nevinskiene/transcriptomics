@@ -11,11 +11,9 @@
 #  install.packages("BiocManager")
 
 #BiocManager::install("EnhancedVolcano")
-
-library(DESeq2)
-library(dplyr)
 library(EnhancedVolcano)
-
+library(dplyr)
+library(DESeq2)
 args = commandArgs(trailingOnly=TRUE)
 FIRST = TRUE
 for (arg in args){
@@ -55,8 +53,6 @@ for (t in types){
   dds = DESeq(dds)
   res = results(dds)
   res = res[order(res$padj), ]
-  
   plot = EnhancedVolcano(res, lab = rownames(res), x = 'log2FoldChange', y = 'pvalue', xlim = c(-5, 8))
   ggsave(paste(t,"_vulcano.png", sep=""), plot=plot, device="png")
-  
 }
